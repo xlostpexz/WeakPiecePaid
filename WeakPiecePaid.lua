@@ -1429,8 +1429,7 @@ end
         pcall(function()
             if _G.Click then
 game:GetService("Players").LocalPlayer.Character[_G.Weapon].Client.Combat:FireServer()
-            end
-            end
+end
         end)
        end)
         end)
