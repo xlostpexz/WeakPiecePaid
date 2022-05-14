@@ -928,6 +928,10 @@ local Home5 = DinoPage5:NewSection("Raid")
     Home:CreateTextBox("Distance -7 -8 -12",Disc,function(value)
     Disc = value
     end)
+
+    Home:CreateTextBox("Type Weapon Name",_G.Weapon,function(value)
+    _G.Weapon = value
+    end)
     
     Home:CreateToggle("Auto Ice Lord",function(value)
        _G.IL = value
@@ -1424,12 +1428,7 @@ end
        game:GetService("RunService").RenderStepped:Connect(function()
         pcall(function()
             if _G.Click then
-            for i,v2 in pairs(game.Players:GetChildren()) do
-                for i,v in pairs(v2.Backpack:GetChildren()) do
-                    if v:FindFirstChild("SD") then
-v.Client.Combat:FireServer()
-end
-end
+game:GetService("Players").LocalPlayer.Character[_G.Weapon].Client.Combat:FireServer()
             end
             end
         end)
